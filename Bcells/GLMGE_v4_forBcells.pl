@@ -650,12 +650,12 @@ write.table(paste("\#After Try: ", "R= ", round(AR\$C,keta), " Y= ", nrow(AR\$Y)
             file=out,sep="",quote=FALSE,append=TRUE, row.names=FALSE, col.names=FALSE)
 
 # R object (AR model)
-save(AR, file=paste("$id", "_AR.RData", sep=""))
+save(AR, file=paste("$outfile", "_AR.RData", sep=""))
 
 # x-fold Cross-validation
 CV <- cv.park(AR\$OX, AR\$OY, FOLD, 10)
 # R object (CV data)
-save(CV, file=paste("$id", "_CV.RData", sep=""))
+save(CV, file=paste("$outfile", "_CV.RData", sep=""))
 
 write.table(paste("\#After Try CV: ", "LC= ", round(CV\$LC,keta), " TC= ", round(CV\$TC,keta), sep=""),
             file=out,sep="",quote=FALSE,append=TRUE, row.names=FALSE, col.names=FALSE)
