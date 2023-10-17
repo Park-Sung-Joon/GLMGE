@@ -13,7 +13,7 @@ The input (TXT file) is separated into dependent variables (Y) and explanatory v
 6. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Then, goto Step 3. :point_up_2:
 7. Otherwise, goto Step 4. till all **XX** are tried. :point_up_2: 
 8. End of Loop1
-
+   
 9.**XX** is randomly shuffled. (searching the second-order effect)
 10. Loop2: **M1** is extended with each of all the possible pairs in **XX**, which yields a trial model **M2**.
 12. AIC and N-fold CV evaluate **M2**, which yields a new removed feature set **XX2**.
@@ -21,6 +21,7 @@ The input (TXT file) is separated into dependent variables (Y) and explanatory v
 14. Otherwise, goto Step 10. till all pairs of **XX** are tried. :point_up_2:
 15. End of Loop2
 
+### Example
 ```
 %>perl GLMGE_v4.pl [INPUT MATRIX] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
 %>perl GLMGE_v4.pl matrix/test.matrix.txt first_result/result.txt TEST 1 123456 NULL NULL
