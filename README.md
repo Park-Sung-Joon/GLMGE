@@ -22,7 +22,17 @@ The input (TXT file) is separated into dependent variables (Y) and explanatory v
 ### Example
 The following command line executes GLM.
 ```
-%>perl GLMGE_v4.pl [INPUT MATRIX] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
+%>perl GLMGE_v4.pl [INPUT] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
+```
+The input txt file must be formated as;
+```
+#[space]ITEM:[space]nameFeature1[space]nameFeature2[space]nameFeature4[space]nameFeature5...
+GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature3[space]valueFeature4...
+GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature3[space]valueFeature4...
+GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature3[space]valueFeature4...
+```
+For example,  
+```
 %>perl GLMGE_v4.pl matrix/test.matrix.txt first_result/result.txt TEST 1 123456 NULL NULL
 ```
 This creates the directory "first_result" and "result.txt" summarizing the results. Refer to "README.txt" in the directory "example/". And, GLMGE.R must be in the same directory as "GLMGE_v4.pl".
