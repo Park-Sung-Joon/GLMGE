@@ -25,12 +25,11 @@ The following command line executes GLM.
 %>perl GLMGE_v4.pl [INPUT MATRIX] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
 %>perl GLMGE_v4.pl matrix/test.matrix.txt first_result/result.txt TEST 1 123456 NULL NULL
 ```
-This creates the directory "first_result" and "result.txt" summarizing the results. Refer to "README.txt" in the directory "example/". 
-GLMGE.R must be in the same directory as "GLMGE_v4.pl".
-
+This creates the directory "first_result" and "result.txt" summarizing the results. Refer to "README.txt" in the directory "example/". And, GLMGE.R must be in the same directory as "GLMGE_v4.pl".
 
 You can remove a set of specific genes;
 ```
 %>perl GLMGE_v4.pl matrix/test.matrix.txt second_result/result.txt TEST 1 123456 first_result/result.txt.outlier_99per.txt NULL
 ```
-"first_result/result.txt.outlier_99per.txt" includes outlier genes (+/- 2.58 in Zscore).
+"first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" (+/- 2.58 in Zscore).
+
