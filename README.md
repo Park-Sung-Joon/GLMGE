@@ -9,14 +9,14 @@ The input (TXT file) is separated into dependent variables (Y) and explanatory v
 3. **XX** is randomly shuffled. (searching the first-order effects)
 4. Loop1: **M1** is extended with each of **XX**, which yields a trial model **M2**.
 5. AIC and N-fold CV evaluate **M2**, which yields a new removed feature set **XX2**.
-6. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Then, goto Step 3. :point_up_2:
-7. Otherwise, goto Step 4. till all **XX** are tried. :point_up_2:
+6. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Then, go to Step 3. :point_up_2:
+7. Otherwise, go to Step 4. till all **XX** are tried. :point_up_2:
 8. End of Loop1
 9. **XX** is randomly shuffled. (searching the second-order effect)
 10. Loop2: **M1** is extended with each of all the possible pairs in **XX**, which yields a trial model **M2**.
 11. AIC and N-fold CV evaluate **M2**, which yields a new removed feature set **XX2**.
-12. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Then, goto Step 3.:point_up_2:
-13. Otherwise, goto Step 10. till all pairs of **XX** are tried. :point_up_2:
+12. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Then, go to Step 3.:point_up_2:
+13. Otherwise, go to Step 10. till all pairs of **XX** are tried. :point_up_2:
 14. End of Loop2
 
 ### Example
@@ -24,7 +24,7 @@ The following command line executes GLM.
 ```
 %>perl GLMGE_v4.pl [INPUT] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
 ```
-The input txt file must be formated as;
+The input text file must be formatted as;
 ```
 #[space]ITEM:[space]nameFeature1[space]nameFeature2[space]nameFeature4[space]nameFeature5...
 GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature3[space]valueFeature4...
