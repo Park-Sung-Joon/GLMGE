@@ -4,12 +4,12 @@
 
 ### What GLM does?
 The input (TXT file) is separated into dependent variables (Y) and explanatory variables (X) and the regression model **Y = wX + e** is built.
-1. Full model (FM); X is all the explanatory variables in the input file.
+1. Starting with a Full model (FM); X is all the explanatory variables in the input file.
 2. AIC (Akaike's Information Criterion) reduces FM, which yields a reduced model **M1** and the set of removed features **XX** from the X, and N-fold cross-validation (CV) measures the predictive performance of **M1**.
 3-1. **XX** is randomly shuffled.
 4-2. **M1** is extended using a variable randomly selected from **XX**, which yields a trial model **M2**.
 5. AIC and N-fold CV evaluate **M2**, which yields a new removed feature set **XX2**.
-6. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Goto Step 3.
+6. If **M2** improves **M1**, **M1** and **XX** are replaced with **M2** and **XX2**. Goto Step 3.:point_up_2:
 7. Otherwise, **M1** is extended with each of all the possible pairs in **XX2**, which yields a trial model **M2**.
 8. AIC and N-fold CV evaluate **M2**, which yields a new removed feature set **XX2**.
 9. 
