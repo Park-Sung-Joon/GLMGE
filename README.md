@@ -2,6 +2,13 @@
 ## The prediction of gene expression by generalized linear regression model (GLM) and the prediction of co-regulated genes by graph embedding (GE)
 ![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/afedbb99-cfcc-4564-b751-1b0d1b215bf0)
 
+### Requirements
++perl and R libraries
++library(MASS)
++library(limma)
++library(coefplot)
++library(cowplot)
+
 ### What GLM does?
 The input (TXT file) is separated into dependent variables (Y) and explanatory variables (X) and the regression model **Y = wX + e** is built.
 1. Starting with a Full model (FM); X is all the explanatory variables in the input file.
@@ -41,5 +48,9 @@ You can remove a set of specific genes;
 ```
 %>perl GLMGE_v4.pl matrix/test.matrix.txt second_result/result.txt TEST 1 123456 first_result/result.txt.outlier_99per.txt NULL
 ```
-"first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" (+/- 2.58 in Zscore).
+The "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" (+/- 2.58 in Zscore).
+
+### Multiple runs
+The "GLMGE_v4.pl" accepts a random seed. Using different seeds, you can run several times to get an ensemble of regression coefficients.
+
 
