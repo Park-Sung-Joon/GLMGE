@@ -31,7 +31,7 @@ The following command line executes GLM.
 ```
 %>perl GLMGE_v4.pl [INPUT] [OUTPUT] [ID] [Log10? 0|1] [RND_SEED] [SKIPgene_Filename|NULL] [SKIPcols: NULL|"A,B,C..."]
 ```
-"GLMGE.R" must exist in the same directory where "GLMGE_v4.pl" is
+"GLMGE.R" must exist in the same directory where "GLMGE_v4.pl" is located.
 
 ### Input file format
 The input file must be formatted as;
@@ -52,12 +52,16 @@ You may want to remove a set of specific genes;
 ```
 %>perl GLMGE_v4.pl input second_result/result.txt ID 1 123456 first_result/result.txt.outlier_99per.txt NULL
 ```
-In this case, the genes listed in "first_result/result.txt.outlier_99per.txt" are removed in this run.
-The "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" and the residuals were (+/- 2.58 in Zscore).
+Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are removed in this run. NOTE that the "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" and the residuals were (+/- 2.58 in Zscore).
 
 Refer to the file **"example1.run.sh"** for details.
 
-### Multiple runs
+### Example2: interative single runs with a different random seed
 The "GLMGE_v4.pl" accepts a random seed. Using different seeds, you can run several times to get an ensemble of regression coefficients.
+```
+%>perl GLMGE_v4.pl input outdir/run_1/result.txt ID 1 123456 NULL NULL
+%>perl GLMGE_v4.pl input outdir/run_2/result.txt ID 1 654321 NULL NULL
+%>perl GLMGE_v4.pl input outdir/run_3/result.txt ID 1 9876543 NULL NULL
+```
 
 
