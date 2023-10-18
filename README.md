@@ -3,11 +3,11 @@
 ![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/afedbb99-cfcc-4564-b751-1b0d1b215bf0)
 
 ### Requirements
-+perl and R libraries
-+library(MASS)
-+library(limma)
-+library(coefplot)
-+library(cowplot)
+perl and R libraries
++ library(MASS)
++ library(limma)
++ library(coefplot)
++ library(cowplot)
 
 ### What GLM does?
 The input (TXT file) is separated into dependent variables (Y) and explanatory variables (X) and the regression model **Y = wX + e** is built.
