@@ -51,6 +51,7 @@ GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature
 This creates the directory "first_result" and the output files.
 
 <img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba" width=50%>
+
 + (A) Pearson's correlation coefficient (R) between Observation (Obs.) and Prediction (Pred.) of the final regression model
 + (B) Regression coefficient (RC) of each feature in the full model and in the final model
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
@@ -84,6 +85,7 @@ Then, the following command line gets merged results and stats;
 %>perl 2.analysis_v4.pl input_matrix outdir Merge_outdir
 ```
 <img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/27596022-1e8b-4f5d-a7e4-df9a86de9b0c" width=50%>
+
 + (A) Pearson's correlation coefficient (R) between Observation and mean of Prediction of the final regression models
 + (B) Regression coefficient (RCs) of features after doing a two-tailed t-test and BH correction p-value (<0.05 adjusted p-value)
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
