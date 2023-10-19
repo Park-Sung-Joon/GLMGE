@@ -90,6 +90,7 @@ Then, the following command line gets merged results and stats;
 + (B) Regression coefficient (RCs) of features after doing a two-tailed t-test and BH correction p-value (<0.05 adjusted p-value)
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
+### Example2: multiple runs with different random seeds by removing outliers
 In addition, you can remove outliers and run again the regression;
 ```
 %>perl GLMGE_v4.pl input_matrix first_outdir/run_1/result.txt ID 1 123456 NULL NULL
