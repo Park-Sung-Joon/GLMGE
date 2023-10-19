@@ -8,6 +8,8 @@ perl and R libraries
 + library(limma)
 + library(coefplot)
 + library(cowplot)
++ library(LSD)
++ library(ggplot2)
 
 ### What GLM does?
 The input (TXT file) is separated into dependent variables (Y) and explanatory variables (X) and the regression model **Y = wX + e** is built.
