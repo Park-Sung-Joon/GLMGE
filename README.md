@@ -50,16 +50,16 @@ GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature
 ```
 This creates the directory "first_result" and the output files.
 
+![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba)
++ (A) Pearson's correlation coefficient (R) between Observation (Obs.) and Prediction (Pred.) of the final regression model
++ (B) Regression coefficient (RC) of each feature in the full model and in the final model
++ (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
+
 You may want to remove a set of specific genes;
 ```
 %>perl GLMGE_v4.pl input_matrix second_result/result.txt ID 1 123456 first_result/result.txt.outlier_99per.txt NULL
 ```
 Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are removed in this run. NOTE that the "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" and the residuals were (+/- 2.58 in Zscore).
-
-![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba)
-+ (A) Pearson's correlation coefficient (R) between Observation (Obs.) and Prediction (Pred.) of the final regression model
-+ (B) Regression coefficient (RC) of each feature in the full model and in the final model
-+ (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
 This is an example to run three times by removing outliers in each run.
 ```
@@ -68,6 +68,7 @@ This is an example to run three times by removing outliers in each run.
 %>cat first_result/result.txt.outlier_99per.txt second_result/result.txt.outlier_99per.txt > outliers.txt
 %>perl GLMGE_v4.pl input_matrix third_result/result.txt ID 1 123456 outliers.txt NULL
 ```
+![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/4dcb3087-7232-46aa-9ebb-44fd5a4bf199)
 
 Refer to the file **"example1/example1.run.sh"** for details.
 
