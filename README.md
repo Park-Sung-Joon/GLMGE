@@ -61,6 +61,14 @@ Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are remove
 + (B) Regression coefficient (RC) of each feature in the full model and in the final model
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
+This is an example to run three times by removing outliers in each run.
+```
+%>perl GLMGE_v4.pl input_matrix first_result/result.txt ID 1 123456 NULL NULL
+%>perl GLMGE_v4.pl input_matrix second_result/result.txt ID 1 123456 first_result/result.txt.outlier_99per.txt NULL
+%>cat first_result/result.txt.outlier_99per.txt second_result/result.txt.outlier_99per.txt > outliers.txt
+%>perl GLMGE_v4.pl input_matrix third_result/result.txt ID 1 123456 outliers.txt NULL
+```
+
 Refer to the file **"example1/example1.run.sh"** for details.
 
 ### Example2: multiple runs with different random seeds
@@ -82,6 +90,8 @@ Then, the following command line gets merged results and stats;
 In addition, you can remove outliers and run again the regression;
 ```
 %>perl GLMGE_v4.pl input_matrix second_outdir/run_1/result.txt ID 1 123456 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_2/result.txt ID 1 654321 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_3/result.txt ID 1 9876543 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
 ```
 
 Refer to the file **"example2/example2.run.sh"** for details.
