@@ -1,6 +1,6 @@
 # GLMGE
 ## The prediction of gene expression by generalized linear regression model (GLM) and the prediction of co-regulated genes by graph embedding (GE)
-![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/afedbb99-cfcc-4564-b751-1b0d1b215bf0)
+<img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/afedbb99-cfcc-4564-b751-1b0d1b215bf0" width=50%>
 
 ### Requirements
 perl and R libraries
@@ -50,7 +50,7 @@ GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature
 ```
 This creates the directory "first_result" and the output files.
 
-![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba)
+<img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba" width=50%>
 + (A) Pearson's correlation coefficient (R) between Observation (Obs.) and Prediction (Pred.) of the final regression model
 + (B) Regression coefficient (RC) of each feature in the full model and in the final model
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
