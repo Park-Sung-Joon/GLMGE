@@ -70,11 +70,14 @@ The "GLMGE_v4.pl" accepts a random seed. Using different seeds, you can run seve
 %>perl GLMGE_v4.pl input_matrix outdir/run_2/result.txt ID 1 654321 NULL NULL
 %>perl GLMGE_v4.pl input_matrix outdir/run_3/result.txt ID 1 9876543 NULL NULL
 ```
-Then, to get merged results and stats, 
+Then, the following command line gets merged results and stats; 
 ```
 %>perl 2.analysis_v4.pl input_matrix outdir Merge_outdir
 ```
-
+![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/27596022-1e8b-4f5d-a7e4-df9a86de9b0c)
++ (A) Pearson's correlation coefficient (R) between Observation and mean of Prediction of the final regression models
++ (B) Regression coefficient (RCs) of features after doing a two-tailed t-test and BH correction p-value (<0.05 adjusted p-value)
++ (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
 Refer to the file **"example2/example2.run.sh"** for details.
 
