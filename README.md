@@ -79,5 +79,13 @@ Then, the following command line gets merged results and stats;
 + (B) Regression coefficient (RCs) of features after doing a two-tailed t-test and BH correction p-value (<0.05 adjusted p-value)
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
+In addition, you can remove outliers and run again the regression;
+```
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_1/result.txt ID 1 123456 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+```
+
 Refer to the file **"example2/example2.run.sh"** for details.
 
+### What GE does?
+
+LINE: Large-scale information network embedding (https://github.com/tangjianpku/LINE)
