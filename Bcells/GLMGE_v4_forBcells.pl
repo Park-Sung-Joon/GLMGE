@@ -97,7 +97,7 @@ if($SKIP_GENEFILE ne "NULL"){
 
 	# set up gene names to be skip
 	undef(@data);
-	@data = `grep -v "\#" $SKIP_GENEFILE | cut -f 1`;
+	@data = `grep -v "\#" $SKIP_GENEFILE | cut -f 1 | uniq`;
 	chop(@data);
 	if(scalar(@data) < 1){
 	    $SKIP_GENEFILE = "NULL";
@@ -123,7 +123,7 @@ print "xFOLD: " . $XFOLD . "\n";
 # 5. OUT_FILE.ps = postscript file showing plots
 
 unlink( $OUT_FILE );
-&RUN_GLMGE($R_function, $TARGET_FILE, $OUT_FILE, \@ITEM, $LOG10, $XFOLD, $ID, $SEED, $SKIP_GENEFILE, $SKIP_COLS, $SKIP_COL_USE);
+&RUN_GLMGE($FUNC, $TARGET_FILE, $OUT_FILE, \@ITEM, $LOG10, $XFOLD, $ID, $SEED, $SKIP_GENEFILE, $SKIP_COLS, $SKIP_COL_USE);
 
 # these commands will be helpful
 #%>tail -f OUT_FILE

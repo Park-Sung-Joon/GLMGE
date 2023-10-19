@@ -1,0 +1,4 @@
+# Zscore cut: >= 2.58 
+# Gene Prediction Observation 
+C1QTNF6 1.32024 0.323518
+HAUS8 2.90744 1.79638
