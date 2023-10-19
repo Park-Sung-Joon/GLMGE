@@ -114,11 +114,13 @@ In addition, you can remove outliers and run again the regression;
 Refer to the file **"example2/example2.run.sh"** for details.
 
 ### What GE does?
-Using the final result of GLM, you can build Feature(TFBS)-Gene networks that can be visualized by CytoScape. The TFBSs having statistically significant RCs will be more attractive. Genes may or may not have those TFBS scores in the input matrix. The following command line creates the network files and executes a graph embedding;
+Using the final result of GLM, you can build Feature(TFBS)-Gene networks that can be visualized by CytoScape. The TFBSs having statistically significant RCs will be more attractive. Genes may or may not have those TFBS scores in the input matrix. The following command line creates the network files and executes a graph embedding, LINE: Large-scale information network embedding (https://github.com/tangjianpku/LINE);
 ```
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_first_outdir
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_second_outdir
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_third_outdir
 ```
-The connectivity of TFBS with target genes
-LINE: Large-scale information network embedding (https://github.com/tangjianpku/LINE)
+The directory **"Merge_first_outdir/Network/"** includes the output files. 
+<img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/b93352af-e2e7-41fa-8a28-c56855cacc77" width=50%>
+
+Refer to the file **"example2/example2.run.sh"** for details.
