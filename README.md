@@ -89,9 +89,21 @@ Then, the following command line gets merged results and stats;
 
 In addition, you can remove outliers and run again the regression;
 ```
-%>perl GLMGE_v4.pl input_matrix second_outdir/run_1/result.txt ID 1 123456 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
-%>perl GLMGE_v4.pl input_matrix second_outdir/run_2/result.txt ID 1 654321 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
-%>perl GLMGE_v4.pl input_matrix second_outdir/run_3/result.txt ID 1 9876543 Merge_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix first_outdir/run_1/result.txt ID 1 123456 NULL NULL
+%>perl GLMGE_v4.pl input_matrix first_outdir/run_2/result.txt ID 1 654321 NULL NULL
+%>perl GLMGE_v4.pl input_matrix first_outdir/run_3/result.txt ID 1 9876543 NULL NULL
+%>perl 2.analysis_v4.pl input_matrix first_outdir Merge_first_outdir
+
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_1/result.txt ID 1 123456 Merge_first_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_2/result.txt ID 1 654321 Merge_first_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix second_outdir/run_3/result.txt ID 1 9876543 Merge_first_outdir/Residuals/residual_stat.txt.outlier_99per.txt NULL
+%>perl 2.analysis_v4.pl input_matrix second_outdir Merge_second_outdir
+
+%>cat Merge_first_outdir/Residuals/residual_stat.txt.outlier_99per.txt Merge_second_outdir/Residuals/residual_stat.txt.outlier_99per.txt > skipped_genes_in_3rd.txt
+%>perl GLMGE_v4.pl input_matrix third_outdir/run_1/result.txt ID 1 123456 skipped_genes_in_3rd.txt NULL
+%>perl GLMGE_v4.pl input_matrix third_outdir/run_2/result.txt ID 1 654321 skipped_genes_in_3rd.txt NULL
+%>perl GLMGE_v4.pl input_matrix third_outdir/run_3/result.txt ID 1 9876543 skipped_genes_in_3rd.txt NULL
+%>perl 2.analysis_v4.pl input_matrix third_outdir Merge_third_outdir
 ```
 
 Refer to the file **"example2/example2.run.sh"** for details.
