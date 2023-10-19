@@ -44,13 +44,13 @@ GeneName[TAB]Expression[TAB]valueFeature1[space]valueFeature2[space]valueFeature
 
 ### Example1: iterative single runs by removing outliers
 ```
-%>perl GLMGE_v4.pl input first_result/result.txt ID 1 123456 NULL NULL
+%>perl GLMGE_v4.pl input_matrix first_result/result.txt ID 1 123456 NULL NULL
 ```
 This creates the directory "first_result" and the output files.
 
 You may want to remove a set of specific genes;
 ```
-%>perl GLMGE_v4.pl input second_result/result.txt ID 1 123456 first_result/result.txt.outlier_99per.txt NULL
+%>perl GLMGE_v4.pl input_matrix second_result/result.txt ID 1 123456 first_result/result.txt.outlier_99per.txt NULL
 ```
 Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are removed in this run. NOTE that the "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" and the residuals were (+/- 2.58 in Zscore).
 
@@ -59,14 +59,20 @@ Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are remove
 + (B) Regression coefficient (RC) of each feature in the full model and in the final model
 + (C) Red points representing outliers in the distribution of 90%, 95%, and 99% points.
 
-Refer to the file **"example1.run.sh"** for details.
+Refer to the file **"example1/example1.run.sh"** for details.
 
-### Example2: interative single runs with a different random seed
+### Example2: multiple runs with different random seeds
 The "GLMGE_v4.pl" accepts a random seed. Using different seeds, you can run several times to get an ensemble of regression coefficients.
 ```
-%>perl GLMGE_v4.pl input outdir/run_1/result.txt ID 1 123456 NULL NULL
-%>perl GLMGE_v4.pl input outdir/run_2/result.txt ID 1 654321 NULL NULL
-%>perl GLMGE_v4.pl input outdir/run_3/result.txt ID 1 9876543 NULL NULL
+%>perl GLMGE_v4.pl input_matrix outdir/run_1/result.txt ID 1 123456 NULL NULL
+%>perl GLMGE_v4.pl input_matrix outdir/run_2/result.txt ID 1 654321 NULL NULL
+%>perl GLMGE_v4.pl input_matrix outdir/run_3/result.txt ID 1 9876543 NULL NULL
+```
+Then, to get merged results and stats, 
+```
+%>perl 2.analysis_v4.pl input_matrix outdir Merge_outdir
 ```
 
+
+Refer to the file **"example2/example2.run.sh"** for details.
 
