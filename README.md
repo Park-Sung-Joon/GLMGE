@@ -120,7 +120,7 @@ Using the final result of GLM, you can build Feature(TFBS)-Gene networks that ca
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_second_outdir
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_third_outdir
 ```
-The directory **"Merge_first_outdir/Network/"** includes the output files. The node connectivity of Feature-Gene graph is embedded into 200-dimensional vectors. Then, Tsne plotting is performed with the embedded vectors.
+The directory **"Merge_first_outdir/Network/"** includes the output files. The node connectivity (bi-directional) of Feature-Gene graph is embedded into 200-dimensional vectors. Then, Tsne plotting is performed with the embedded vectors.
 
 <img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/b93352af-e2e7-41fa-8a28-c56855cacc77" width=30%>
 
