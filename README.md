@@ -54,6 +54,9 @@ You may want to remove a set of specific genes;
 ```
 Here, the genes listed in "first_result/result.txt.outlier_99per.txt" are removed in this run. NOTE that the "first_result/result.txt.outlier_99per.txt" includes outlier genes found from the "first_result/" and the residuals were (+/- 2.58 in Zscore).
 
+![image](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/61195c90-82a1-4c77-aa69-f47a8426bdba)
+
+
 Refer to the file **"example1.run.sh"** for details.
 
 ### Example2: interative single runs with a different random seed
