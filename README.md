@@ -68,7 +68,7 @@ This is an example to run three times by removing outliers in each run.
 %>cat first_result/result.txt.outlier_99per.txt second_result/result.txt.outlier_99per.txt > outliers.txt
 %>perl GLMGE_v4.pl input_matrix third_result/result.txt ID 1 123456 outliers.txt NULL
 ```
-![image|50%](https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/779fb0b2-863d-4341-b6f0-90e64f41cc86)
+<image src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/779fb0b2-863d-4341-b6f0-90e64f41cc86" width=50%)
 
 Refer to the file **"example1/example1.run.sh"** for details.
 
