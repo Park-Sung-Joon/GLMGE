@@ -121,12 +121,12 @@ Using the final merged result of multiple runs of GLM, you can build Feature(TFB
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_third_outdir
 ```
 The directory such as **"Merge_first_outdir/Network/"** includes the output files. The node connectivity (bi-directional) of Feature-Gene graph is embedded into 200-dimensional vectors. Then, Tsne plotting is performed with the embedded vectors.
-+ reconstruct -train LINE_input.txt -output LINE_input.txt.reconst -depth 2 -threshold 1
-+ line -train LINE_input.txt.reconst -output vect1.txt -binary 1 -size 100 -order 1 -negative 5
-+ line -train LINE_input.txt.reconst -output vect2.txt -binary 1 -size 100 -order 2 -negative 5
-+ normalize -input vect1.txt -output vect3.txt -binary 1
-+ normalize -input vect2.txt -output vect4.txt -binary 1
-+ concatenate -input1 vect3.txt -input2 vect4.txt -output LINE_vectors.txt -binary 0
+1 reconstruct -train LINE_input.txt -output LINE_input.txt.reconst -depth 2 -threshold 1
+2 line -train LINE_input.txt.reconst -output vect1.txt -binary 1 -size 100 -order 1 -negative 5
+3 line -train LINE_input.txt.reconst -output vect2.txt -binary 1 -size 100 -order 2 -negative 5
+4 normalize -input vect1.txt -output vect3.txt -binary 1
+5 normalize -input vect2.txt -output vect4.txt -binary 1
+6 concatenate -input1 vect3.txt -input2 vect4.txt -output LINE_vectors.txt -binary 0
 
 <img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/b93352af-e2e7-41fa-8a28-c56855cacc77" width=30%>
 
