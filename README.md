@@ -114,13 +114,19 @@ In addition, you can remove outliers and run again the regression;
 Refer to the file **"example2/example2.run.sh"** for details.
 
 ### What GE does?
-Using the final result of GLM, you can build Feature(TFBS)-Gene networks that can be visualized by CytoScape. The TFBSs having statistically significant RCs will be more attractive. Genes may or may not have those TFBS scores in the input matrix. The following command line creates the network files and executes a graph embedding, LINE: Large-scale information network embedding (https://github.com/tangjianpku/LINE);
+Using the final merged result of multiple runs of GLM, you can build Feature(TFBS)-Gene networks that can be visualized by CytoScape. The TFBSs having statistically significant RCs will be more attractive, and you want to know the co-regulated genes. The following command line helps this by creating the network files and by running a graph embedding, LINE: Large-scale information network embedding (https://github.com/tangjianpku/LINE);
 ```
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_first_outdir
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_second_outdir
 %>perl 3.graphEmbedding_v4.pl input_matrix Merge_third_outdir
 ```
-The directory **"Merge_first_outdir/Network/"** includes the output files. The node connectivity (bi-directional) of Feature-Gene graph is embedded into 200-dimensional vectors. Then, Tsne plotting is performed with the embedded vectors.
+The directory such as **"Merge_first_outdir/Network/"** includes the output files. The node connectivity (bi-directional) of Feature-Gene graph is embedded into 200-dimensional vectors. Then, Tsne plotting is performed with the embedded vectors.
++ reconstruct -train Merge_first_result/Network/LINE_input.txt -output Merge_first_result/Network/LINE_input.txt.reconst -depth 2 -threshold 1
++ line -train Merge_first_result/Network/LINE_input.txt.reconst -output vect1.txt -binary 1 -size 100 -order 1 -negative 5
++ line -train Merge_first_result/Network/LINE_input.txt.reconst -output vect2.txt -binary 1 -size 100 -order 2 -negative 5
++ normalize -input vect1.txt -output vect3.txt -binary 1
++ normalize -input vect2.txt -output vect4.txt -binary 1
++ concatenate -input1 vect3.txt -input2 vect4.txt -output Merge_first_result/Network/LINE_vectors.txt -binary 0
 
 <img src="https://github.com/Park-Sung-Joon/GLMGE/assets/52985953/b93352af-e2e7-41fa-8a28-c56855cacc77" width=30%>
 
